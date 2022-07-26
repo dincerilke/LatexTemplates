@@ -1,0 +1,102 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx, wrapfig, enumitem, ulem}
+\usepackage{amssymb, amsmath, mathtools, bm}
+\usepackage[mathcal]{euscript}
+\usepackage{mathrsfs, multirow}
+\usepackage{hyperref}
+\usepackage[labelformat=empty]{caption}
+\usepackage{subcaption}
+\usepackage[table, dvipsnames]{xcolor}
+\usepackage{tikz}
+\usepackage[linguistics]{forest, adjustbox}
+\usepackage{fancyhdr, listings}
+\usepackage[most]{tcolorbox}
+\usepackage{tabularx, booktabs, diagbox}
+\usepackage{subfiles}
+
+
+
+
+% command for permutation notation
+\newcommand*{\permcomb}[4][0mu]{{{}^{#3}\mkern#1#2_{#4}}}
+\newcommand*{\perm}[1][-3mu]{\permcomb[#1]{P}}
+
+\usetikzlibrary{arrows, tikzmark, positioning, fit, decorations.pathreplacing}
+
+
+% define "Let x = blah" environment
+\newenvironment{conditions}
+  {\par\vspace{\abovedisplayskip}\noindent\begin{tabular}{>{$}l<{$} @{${}={}$   } l}}
+  {\end{tabular}\par\vspace{\belowdisplayskip}}
+
+% tabularx block, X cell with centring
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+% DEFINED BOXES
+\definecolor{light-blue}{RGB}{240, 246, 255}
+\definecolor{light-yellow}{RGB}{255, 248, 230}
+\definecolor{light-green}{RGB}{204, 255, 204}
+\definecolor{dark-green}{RGB}{51, 204, 51}
+
+\newtcolorbox{example-box}{colback=light-blue, boxrule=0pt, boxsep=0pt, width=\textwidth, grow to left by=1in, grow to right by=1in, left*=0mm, right*=0mm, sharp corners=all, breakable, frame hidden}
+\newtcolorbox{proof-box}{colback=light-yellow, boxrule=0pt, boxsep=0pt, width=\textwidth, grow to left by=1in, grow to right by=1in, left*=0mm, right*=0mm, sharp corners=all, breakable, frame hidden}
+\newtcolorbox{important-box}{colback=light-green, boxrule=1pt, width=\textwidth, breakable}
+
+
+
+% FOR PSEUDOCODE ALGORITHMS
+\usepackage[ruled, noline, linesnumbered, commentsnumbered, noend]{algorithm2e}
+\SetKwFor{ForAll}{forall}{do in parallel}{end}
+\newcommand\mycommfont[1]{\small\ttfamily\textcolor{blue}{#1}}
+\SetCommentSty{mycommfont}
+\newlength{\commentWidth}
+\setlength{\commentWidth}{8.5cm} % having variable for comment width allows local changes later
+\newcommand{\atcp}[1]{\tcp*[f]{\makebox[\commentWidth]{#1\hfill}}}
+\makeatletter
+\newcommand{\algorithmstyle}[1]{\renewcommand{\algocf@style}{#1}}
+\SetArgSty{textnormal} 
+\makeatother
+
+% using paragraph as headings in toc
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+            {-2.5ex\@plus -1ex \@minus -.25ex}%
+            {1.25ex \@plus .25ex}%
+            {\normalfont\normalsize\bfseries}}
+\makeatother
+\setcounter{secnumdepth}{4} % how many sectioning levels to assign numbers to
+\setcounter{tocdepth}{4}    % how many sectioning levels to show in ToC
+
+% have link to toc in footer
+\pagestyle{fancy}
+\fancyfoot[L,C,R]{}
+\fancyhead[L,C,R]{}
+\fancyfoot[L]{\hyperref[toc]{Contents}}
+\fancyfoot[R]{\thepage}
+\fancyhead[R]{COMP3001}
+
+\hypersetup{colorlinks=true, linkcolor=blue!50!red, urlcolor=green!70!black}
+
+\allowdisplaybreaks
+
+\title{}
+\author{Ilke Dincer}
+\date{}
+
+\begin{document}
+\begin{center}
+    \LARGE
+    \textbf{UNITCODE Unit Name}
+\end{center}
+
+\pagenumbering{roman}
+\tableofcontents \label{toc}
+
+\listofalgorithms
+
+\appendix
+\subfile{sections/appendix.tex}
+
+
+\end{document}
