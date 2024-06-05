@@ -1,0 +1,29 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ilke_maths}
+  [Some useful maths ]
+
+% maths packages
+\usepackage{amssymb, amsmath, mathtools, bm}
+\usepackage[mathcal]{euscript}
+\usepackage{mathrsfs}
+
+
+% command for permutation notation
+\newcommand*{\permcomb}[4][0mu]{{{}^{#3}\mkern#1#2_{#4}}}
+\newcommand*{\perm}[1][-3mu]{\permcomb[#1]{P}}
+
+
+% define "Let x = blah" environment
+\newenvironment{conditions}
+  {\par\vspace{\abovedisplayskip}\noindent\begin{tabular}{>{$}l<{$} @{${}={}$   } l}}
+  {\end{tabular}\par\vspace{\belowdisplayskip}}
+
+% Same as conditions, but wraps according to line width
+% takes longer to compile if that matters
+\newenvironment{conditions*}
+{\par\vspace{\abovedisplayskip}\noindent
+  \tabularx{\columnwidth}{>{$}l<{$} @{${}={}$} >{\raggedright\arraybackslash}X}}
+{\endtabularx\par\vspace{\belowdisplayskip}}
+
+
+\endinput

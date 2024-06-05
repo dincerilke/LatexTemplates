@@ -1,0 +1,24 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ilke_algorithms}
+  [All the list of algorithms stuff]
+
+% \RequirePackage{whateverwe need}
+\RequirePackage[ruled, noline, linesnumbered, commentsnumbered, noend]{algorithm2e}
+
+
+\SetKwFor{ForAll}{forall}{do in parallel}{end}
+\newcommand\mycommfont[1]{\small\ttfamily\textcolor{blue}{#1}}
+\SetCommentSty{mycommfont}
+\newlength{\commentWidth}
+\setlength{\commentWidth}{8.5cm} % having variable for comment width allows local changes later
+\newcommand{\atcp}[1]{\tcp*[f]{\makebox[\commentWidth]{#1\hfill}}}
+\makeatletter
+\newcommand{\algorithmstyle}[1]{\renewcommand{\algocf@style}{#1}}
+\SetArgSty{textnormal} 
+\makeatother
+
+
+
+
+
+\endinput

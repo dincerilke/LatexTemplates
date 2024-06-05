@@ -1,0 +1,19 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ilke_boxes}
+  [Some custom defined box callout formats]
+
+\RequirePackage[table, dvipsnames]{xcolor}
+\RequirePackage[most]{tcolorbox}
+
+% Defines some boxes. Kinda like callouts but extends from edge to edge
+\definecolor{light-blue}{RGB}{240, 246, 255}
+\definecolor{light-yellow}{RGB}{255, 248, 230}
+\definecolor{light-green}{RGB}{204, 255, 204}
+\definecolor{dark-green}{RGB}{51, 204, 51}
+
+\newtcolorbox{example-box}{colback=light-blue, boxrule=0pt, boxsep=0pt, width=\textwidth, grow to left by=1in, grow to right by=1in, left*=0mm, right*=0mm, sharp corners=all, breakable, frame hidden}
+\newtcolorbox{proof-box}{colback=light-yellow, boxrule=0pt, boxsep=0pt, width=\textwidth, grow to left by=1in, grow to right by=1in, left*=0mm, right*=0mm, sharp corners=all, breakable, frame hidden}
+\newtcolorbox{important-box}{colback=light-green, boxrule=1pt, width=\textwidth, breakable}
+
+
+\endinput

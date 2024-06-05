@@ -1,0 +1,195 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{subfiles}
+\usepackage{enumitem, ulem}
+\usepackage{hyperref}
+
+\usepackage[labelformat=empty]{caption}
+\usepackage{subcaption}
+
+\usepackage[table, dvipsnames]{xcolor}
+\usepackage{listings}
+
+% better image handling
+\usepackage{graphicx, wrapfig}
+
+% outline package for easy bullet point lists
+% plus custom bullet points
+\usepackage{outlines}
+\renewcommand{\labelitemi}{$\triangleright$}
+\renewcommand{\labelitemii}{$\bullet$}
+\renewcommand{\labelitemiii}{$\diamond$}
+\renewcommand{\labelitemiv}{$-$}
+
+% custom diagrams built in latex
+\usepackage{tikz}
+\usepackage[linguistics]{forest, adjustbox}
+
+\usetikzlibrary{arrows, tikzmark, positioning, fit, decorations.pathreplacing}
+
+%% packages for tables
+\usepackage{tabularx, booktabs, diagbox}
+\usepackage{multicol, multirow}
+
+
+% my packages
+\usepackage{styfiles/ilke_maths}
+\usepackage{styfiles/ilke_boxes}
+\usepackage{styfiles/ilke_algorithms}
+
+% % this package can be finicky, be careful. 
+\usepackage{styfiles/ilke_marginnotes}
+
+
+% using paragraph as headings in toc
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+            {-2.5ex\@plus -1ex \@minus -.25ex}%
+            {1.25ex \@plus .25ex}%
+            {\normalfont\normalsize\bfseries}}
+\makeatother
+\setcounter{secnumdepth}{4} % how many sectioning levels to assign numbers to
+\setcounter{tocdepth}{4}    % how many sectioning levels to show in ToC
+
+% Create header and footer. 
+% adds hyperlink to contents page in header
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyfoot[L,C,R]{}
+\fancyhead[L,C,R]{}
+\fancyfoot[L]{\hyperref[toc]{Contents}}
+\fancyfoot[R]{\thepage}
+\fancyhead[R]{UNITCODE}
+
+% I like colourful hyperlinks, and I don't like the red boxes from default latex
+\hypersetup{colorlinks=true, linkcolor=blue!50!red, urlcolor=green!70!black}
+
+
+% personal preference, I don't like spaced out lists or paragraph indents when I'm not writing reports/essays
+\setlist{nolistsep}
+\setlength{\parindent}{0in}
+\allowdisplaybreaks
+
+\title{}
+\author{Ilke Dincer}
+\date{}
+
+\begin{document}
+\begin{center}
+    \LARGE
+    \textbf{Long form notes demo}
+\end{center}
+
+\pagenumbering{roman}
+\tableofcontents \label{toc}
+
+% \listofalgorithms
+
+\pagebreak
+\pagenumbering{arabic}
+\section{Testing Boxes}
+
+\begin{example-box}
+  I use blue boxes for examples. 
+\end{example-box}
+
+
+\begin{important-box}
+Important boxes are green. 
+\end{important-box}
+
+\begin{proof-box}
+  And proofs are in yellow. 
+\end{proof-box}
+
+Box colours and names can be altered in ilke\_boxes.sty. 
+
+
+\section{Outlines}
+
+\begin{outline}
+\0 This isn't anything custom, just a package from the internet
+  \1 But it's a very useful, very manual, way of doing dot point lists
+    \2 sometimes itemize and enumerate get too bulky
+      \3 level 3
+        \4 level 4 is the max
+  \1[+] a pro is the easy custom bullet points too
+  \1[-] a con is you have to manually change levels if you change your mind about order
+\end{outline}
+
+
+\section{Algorithms}
+Sometimes it's nice to write algorithms out in pseudocode, and you want to have a nice list of all of them (\textit{*cough* data structures and algorithms *cough*}). 
+
+
+\begin{algorithm}[H]
+    \caption{Insertion Sort}
+    \label{alg:insertionsort}
+    \DontPrintSemicolon
+    \setlength{\commentWidth}{7cm}
+    \SetKwFunction{length}{length}
+
+    \KwIn{A sequence of $n$ numbers ($a_1, a_2, \ldots, a_n$)}
+    \KwOut{A reordering ($b_1, b_2, \ldots, b_n$) of the input sequence such that $b_1 \leq b_2 \leq \ldots \leq b_n$}
+
+    \For(\atcp{$c_1$, $n$ (condition is checked $n$ times)}) {$j=2$ \KwTo $\length(A)$}{ 
+        $key = A[j]$ \atcp{$c_2$, $n-1$ (loop executed once less)} \;
+        $i=j-1$ \atcp{$c_3$, $n-1$} \;
+        \While(\atcp{$c_4$, $\sum_{j=2}^n (t_j + 1)$}){$i>0$ and $A[i]>key$}{
+            $A[i=1] = A[i]$ \atcp{$c_5$, $\sum_{j=2}^n (t_j)$} \;
+            $i=i-1$ \atcp{$c_6$, $\sum_{j=2}^n (t_j)$} \;
+        }
+        $A[i+1] = key$ \atcp{$c_7$, $n-1$} \;
+    }
+\end{algorithm}
+
+\listofalgorithms
+
+
+\section{Code}
+
+\section{Maths}
+
+See the maths equation $$R_H = \frac{V_H \times t}{B \times I} = \frac{1}{q\times n} = \rho \mu$$
+
+The \textit{conditions} environment from ilke\_maths can be used to create a nice table of definitions for terms in the equation, like below. \textit{conditions*} does the same thing, but wraps according to linewidth (takes marginally longer to compile if that matters) 
+
+\begin{conditions}
+  I & current through the sensor \\
+  B & the flux density ($T$) \\
+  t & thickness of sensor (m) \\
+  q & electronic charge ($1.5\times10^{19} C$) \\
+  n & carrier density ($m^{-3}$) \\
+  \mu & carrier mobility ($cm^2V^{-1}s^{-1}$) \\
+  \rho & resistivity ($\Omega m^{-1}$) of the material \\
+\end{conditions}
+
+\section{Margin Notes}
+This is a very useful setup if you are printing your notes (like when an exam is open book but limited to printed materials in the exam room).
+
+Hyperlinks work great in files on computers, but not so much on paper. 
+
+Beware, that this package is a little finicky and may not graphically look as you might want straight away. Index entries might overlap text, page numbers might disappear, etc. But nothing should properly break, it just won't be formatted as nicely (which may be a dealbreaker tbh). \index{Disclaimer}\\
+
+Subentries exist too, but only one level deep. \index{Disclaimer!Subentry}\\ 
+
+
+Note that the index will always put itself on a new page. And seems to break headers, but only on the first page of the index. \\
+
+
+It may be useful to add extra space to the margins, especially if your index is long and many are close together. \index{Wow what a very very very long index entry}
+
+See, the index margin notes are overlapping\index{Oops}. \\
+
+
+You can also set up the document as a twosides, with the index entries showing on the opposite margins sides (so they're always on the outside of the two page spread) (set twoside, openright in the documentclass options) \\
+
+This is a good setting for margins: usepackage[a4paper, inner=2cm, outer=4cm, bottom=2cm, marginparwidth=3.5cm]{geometry}
+
+\printindex
+
+\appendix
+\subfile{sections/appendix.tex}
+
+
+\end{document}

@@ -1,0 +1,48 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ilke_marginnotes}
+  [Adding index entries to the margins for use in printed documents.]
+%% Sometimes you want to print your notes documents. 
+% Hyperlinks obviously don't work on paper, but that's where indexing comes in. 
+
+\RequirePackage{makeidx}
+\RequirePackage{xparse}
+\RequirePackage{marginnote}
+
+% set custom margins to allow space for index entry to be in margin
+% \RequirePackage[a4paper, inner=2cm, outer=4cm, bottom=2cm, marginparwidth=3.5cm]{geometry}
+% works with normal article and a twoside article
+
+% Warning that I barely understand this, and it does break sometimes. 
+% when index flows over more than 1 page, margins may be on wrong sides
+
+% page numbers in footer may break with this? move them to header instead.
+
+% index commands, puts index entry in margin
+\makeindex
+\let\oldindex\index
+\renewcommand{\index}[1]{%
+  \oldindex{#1}%
+  \marginnote{\footnotesize \splitentry{#1}}%
+}
+
+\NewDocumentCommand{\splitentry}{ >{\SplitArgument{1}{!}} m }
+ {%
+  \splitentryEM#1%
+ }
+\NewDocumentCommand{\splitentryEM}{mm}
+ {%
+  \IfNoValueTF{#2}
+   {\splitentryBAR{#1}} 
+   {#1 -- \splitentryBAR{#2}}%
+ }
+\NewDocumentCommand{\splitentryBAR}{ >{\SplitArgument{1}{|}} m }
+ {%
+  \dosplitentryBAR#1%
+ }
+\NewDocumentCommand{\dosplitentryBAR}{mm}{#1}
+
+
+
+
+
+\endinput

@@ -1,0 +1,84 @@
+\documentclass[11pt, a4paper]{scrartcl}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{fancyhdr, listings}
+\usepackage{multicol}
+
+% optional, but useful packages
+\usepackage{graphicx, wrapfig, enumitem, ulem}
+\usepackage{amssymb, mathtools, bm}
+\usepackage{amsmath}
+\usepackage[mathcal]{euscript}
+\usepackage{mathrsfs, multirow}
+\usepackage{tabularx, booktabs, diagbox}
+\usepackage{minibox}
+% \usepackage{sectsty}
+
+% dummy text for this demo
+\usepackage{lipsum}
+
+\raggedbottom
+
+\setlist[itemize]{noitemsep, topsep=0pt}
+\setlist[enumerate]{noitemsep, topsep=0pt}
+
+\setlength{\parindent}{0pt}
+
+\pagestyle{fancy}
+\fancyfoot[L,C,R]{}
+\fancyhead[L,C,R]{}
+\fancyhead[R]{}
+\fancyhead[L]{1Pager}
+
+
+\usepackage{pgfpages}
+\pgfpagesuselayout{2 on 1}[a4paper,landscape,border shrink = 2mm]
+
+
+% define "Let x = blah" environment
+\newenvironment{conditions}
+  {\par\vspace{\abovedisplayskip}\noindent\begin{tabular}{>{$}l<{$} @{${}={}$} l}}
+  {\end{tabular}\par\vspace{\belowdisplayskip}}
+
+
+% \sectionfont{\normalsize}
+% \subsectionfont{\normalsize}
+% \subsubsectionfont{\normalsize}
+
+% \setkomafont{disposition}{\normalfont\bfseries}
+
+% fancy section headings requires 
+\usepackage{xcolor}
+\colorlet{sectioncolor}{orange}
+\colorlet{subsectioncolor}{purple}
+\colorlet{subsubsectioncolor}{blue!50!black}
+\makeatletter
+\renewcommand\sectionlinesformat[4]{%
+  \colorbox{#1color}{%
+    \parbox[t]{\dimexpr\linewidth-2\fboxsep\relax}{%
+      \raggedsection\color{white}\normalsize\@hangfrom{#3}{#4}%
+}}}
+
+
+\newenvironment{conditions*}
+{\par\vspace{\abovedisplayskip}\noindent
+  \tabularx{\columnwidth}{>{$}l<{$} @{${}={}$} >{\raggedright\arraybackslash}X}}
+{\endtabularx\par\vspace{\belowdisplayskip}}
+
+\setlength{\columnseprule}{0.4pt}
+
+
+\begin{document}
+% \tiny
+\begin{multicols}{3}
+\section{A long time ago}
+\subsection{In a galaxy}
+\subsubsection{Far, far}
+\paragraph*{Away} ... 
+
+\lipsum[1-14]
+\section{Hi}
+\lipsum[15-16]
+
+\end{multicols}
+
+\end{document}
