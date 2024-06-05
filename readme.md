@@ -24,5 +24,6 @@ The longformnote has a few bespoke things that I've added to my latex setup over
   - Obviously including code is very useful for reports, there's not really much custom stuff here but it's a good reminder of my preferred ways to include code (there's a lot of options)
 - Maths Stuff
   - I've created a few helper functions/stuff for my maths
-  - Also a breakdown of when to use what packages
-- 
+
+
+  See longformnotes.pdf for a demo of each "feature"
