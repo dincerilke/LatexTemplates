@@ -1,0 +1,19 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ilke_code}
+  [Code formatting packages]
+
+\RequirePackage{minted}
+\RequirePackage{xcolor}
+
+\renewcommand\listoflistingscaption{List of source codes}
+\definecolor{LightGray}{gray}{0.95}
+
+
+% customise the appearance of the code snippets
+\setminted{linenos=true}
+% \setminted[]{frame=lines}
+\setminted[]{numbersep=5pt}
+\setminted[]{fontsize=\small}
+\setminted[]{bgcolor=LightGray}
+
+\usemintedstyle{borland}

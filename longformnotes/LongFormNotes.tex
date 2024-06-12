@@ -4,7 +4,8 @@
 \usepackage{enumitem, ulem}
 \usepackage{hyperref}
 
-\usepackage[labelformat=empty]{caption}
+% \usepackage[labelformat=empty]{caption}
+\usepackage{caption}
 \usepackage{subcaption}
 
 \usepackage[table, dvipsnames]{xcolor}
@@ -36,6 +37,7 @@
 \usepackage{styfiles/ilke_maths}
 \usepackage{styfiles/ilke_boxes}
 \usepackage{styfiles/ilke_algorithms}
+\usepackage{styfiles/ilke_code}
 
 % % this package can be finicky, be careful. 
 \usepackage{styfiles/ilke_marginnotes}
@@ -52,7 +54,7 @@
 \setcounter{tocdepth}{4}    % how many sectioning levels to show in ToC
 
 % Create header and footer. 
-% adds hyperlink to contents page in header
+% adds hyperlink to contents page in footer
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyfoot[L,C,R]{}
@@ -102,7 +104,7 @@ Important boxes are green.
   And proofs are in yellow. 
 \end{proof-box}
 
-Box colours and names can be altered in ilke\_boxes.sty. 
+Box colours and names can be altered in \texttt{ilke\_boxes.sty}. 
 
 
 \section{Outlines}
@@ -147,6 +149,48 @@ Sometimes it's nice to write algorithms out in pseudocode, and you want to have 
 
 
 \section{Code}
+
+Minted is my package of choice for including code in latex files. It does really nice looking notes, but requires the python package \texttt{Pygments} to be installed, see \href{https://mirror.aarnet.edu.au/pub/CTAN/macros/latex/contrib/minted/minted.pdf}{docs} for more info. Can do \mintinline{python}{inline code} too. \\
+
+
+A code snippet is done by 
+\begin{minted}{python}
+def hi():
+  print("hi")
+\end{minted}
+
+Can caption code and include code in a list of source codes (also called a list of listings) by putting the code snippet inside a listing environment. 
+
+\begin{listing}[!ht]
+\begin{minted}{c}
+#include <stdio.h>
+int main() {
+   printf("Hello, World!"); /*printf() outputs the quoted string*/
+   return 0;
+}
+\end{minted}
+\caption{Hello World in C}
+\label{listing:c}
+\end{listing}
+
+
+
+Can also include external files. 
+\begin{listing}[!ht]
+\inputminted{python}{resources/example.py}
+\caption{Example from external file}
+\label{listing:external}
+\end{listing}
+
+
+Can get a list of codes (list of listings) with 
+\listoflistings
+
+\bigskip
+For colour schemes available in minted see the \href{https://www.overleaf.com/learn/latex/Code_Highlighting_with_minted#Reference_guide}{reference guide}.\\
+
+
+A very minimalist code highlight package is \texttt{listings}. Doesn't look as good, but doesn't require any python or external packages. 
 
 \section{Maths}
 
