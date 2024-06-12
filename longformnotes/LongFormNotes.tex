@@ -9,7 +9,6 @@
 \usepackage{subcaption}
 
 \usepackage[table, dvipsnames]{xcolor}
-\usepackage{listings}
 
 % better image handling
 \usepackage{graphicx, wrapfig}
@@ -34,13 +33,14 @@
 
 
 % my packages
-\usepackage{styfiles/ilke_maths}
-\usepackage{styfiles/ilke_boxes}
-\usepackage{styfiles/ilke_algorithms}
-\usepackage{styfiles/ilke_code}
+\usepackage{../styfiles/ilke_maths}
+\usepackage{../styfiles/ilke_boxes}
+\usepackage{../styfiles/ilke_algorithms}
+\usepackage{../styfiles/ilke_code}
+\usepackage{../styfiles/ilke_misc}
 
 % % this package can be finicky, be careful. 
-\usepackage{styfiles/ilke_marginnotes}
+\usepackage{../styfiles/ilke_marginnotes}
 
 
 % using paragraph as headings in toc
@@ -104,8 +104,10 @@ Important boxes are green.
   And proofs are in yellow. 
 \end{proof-box}
 
-Box colours and names can be altered in \texttt{ilke\_boxes.sty}. 
+Box colours and names can be altered in \texttt{ilke\_boxes.sty}. \\
 
+
+The todo tag looks like \TODO, there's also \CITATION.
 
 \section{Outlines}
 
@@ -208,6 +210,8 @@ The \textit{conditions} environment from ilke\_maths can be used to create a nic
   \rho & resistivity ($\Omega m^{-1}$) of the material \\
 \end{conditions}
 
+\subfile{sections/subfile.tex}
+
 \section{Margin Notes}
 This is a very useful setup if you are printing your notes (like when an exam is open book but limited to printed materials in the exam room).
 
@@ -232,8 +236,6 @@ This is a good setting for margins: usepackage[a4paper, inner=2cm, outer=4cm, bo
 
 \printindex
 
-\appendix
-\subfile{sections/appendix.tex}
 
 
 \end{document}

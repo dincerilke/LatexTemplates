@@ -1,0 +1,131 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage[toc,page]{appendix}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\usepackage{xcolor}
+\usepackage{graphicx, wrapfig, enumitem}
+\usepackage{caption, subcaption}
+
+\usepackage[T1]{fontenc}
+\usepackage{placeins} % for float barrier
+
+% for tables
+\usepackage{multirow, multicol, tabularx, booktabs, array, hhline, longtable}
+
+% url breaks means that long urls in the bibliography won't go over the margins
+\usepackage{breakurl} 
+\def\UrlBreaks{\do\/\do-}
+
+\usepackage[language=australian,style=ieee,citestyle=numeric]{biblatex}
+\addbibresource{refs.bib} 
+
+\usepackage{../styfiles/ilke_code}
+
+% \graphicspath{{resources/}{../resources/}}
+
+\setlist{nolistsep}
+% \setlength{\parindent}{0in}
+% \hypersetup{colorlinks=true, linkcolor=blue!50!red, urlcolor=green!70!black}
+
+
+\newcommand{\CITATION}{{\color{red}(CITATION NEEDED)}}
+\newcommand{\TODO}{{\color{red}\textbf{(TODO)}}}
+
+\begin{document}
+
+
+\begin{titlepage}
+
+    \centering
+
+    \normalfont\normalsize
+	\textsc{University}\\ % Your university, school and/or department name(s)
+  \textsc{UNITCODE}\\
+  \textsc{Unit Name} \\
+	\vspace{25pt} % Whitespace
+	\rule{\linewidth}{0.5pt}\\ % Thin top horizontal rule
+	\vspace{20pt} % Whitespace
+    {\huge Report Title }\\
+    \vspace{0.5em}
+    {\large Sub-Title}
+	\vspace{12pt} % Whitespace
+	\rule{\linewidth}{2pt}\\ % Thick bottom horizontal rule
+    
+	\vspace{0.1\textheight} % Whitespace
+ 
+
+    \normalsize \lineskip .75em
+    \vspace{1em}
+    \LARGE Name \\ \small Student Number  \\
+ 
+
+    \vspace{0.1\textheight}
+    \today
+
+\end{titlepage}
+
+
+\tableofcontents
+\pagebreak
+\listoffigures
+\listoftables
+\listoflistings
+
+
+\pagebreak
+
+\section{Introduction}
+One day, the world went wacky \cite{suter2009day}. 
+
+Figure \ref{fig:coin} shows some silver. 
+
+\begin{figure}[h!]
+    \center
+    \includegraphics[width=0.3\textwidth]{resources/coin.png}
+    \caption{A coin}
+    \label{fig:coin}
+\end{figure}
+
+\section{...}
+
+\begin{table}[h!]
+    \centering
+    \caption{A table of... numbers?}
+    \label{tab:numbers?}
+    \begin{tabular}{ccc}
+        \toprule
+        Column 1 & Column 2 & Column 3 \\ \midrule
+        x & y & z \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{Conclusion}
+\begin{listing}[h!]
+    \caption{A code snippet}
+    \label{code:bye}
+    \begin{minted}{python}
+def hello():
+    print("goodbye")
+    \end{minted}
+\end{listing}
+
+\pagebreak
+\printbibliography
+
+
+\pagebreak
+\appendix
+
+\section{Supplementary Materials}
+
+% \begin{longlisting}
+%     \caption{Supporting Header Code for I2C Controlled LCD}
+%     \label{lst:proj:p2:lcd:h}
+%     \inputminted[]{cpp}{Code/Task2/LiquidCrystal_I2C.h}
+% \end{longlisting}
+
+
+
+\end{document}

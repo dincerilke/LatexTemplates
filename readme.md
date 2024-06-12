@@ -8,10 +8,12 @@ This is a collection of my Latex files that have been very helpful during uni.
   - Has a lot of customisation/speciality things I've added for units as I've needed them
 - `1pagers` is a template for when you need 1 page (or 2) of notes to take into a test. It's compacted and compressed, and can contain a hell of a lot of content. 
   - Fairly simple, not much fancy stuff going on here. 
+- `reports` is as it sounds, my standard report format for assignments, lab reports, etc.
+  - has a bibliography and refs file, set citation style in package options for biblatex
 
 ## Features/Optional Things
 
-The longformnote has a few bespoke things that I've added to my latex setup over the years. The 'features' (more really options) are:
+There are a few bespoke things that I've added to my latex setup over the years. The 'features' (more really options) are:
 
 - Index notes in Margins: `marginnotes`
   - Sometimes you need to print all your notes. Hyperlinks don't really work here, but adding index entries to the margins of document means it's easy to find what you want with a physical copy. 
@@ -24,6 +26,7 @@ The longformnote has a few bespoke things that I've added to my latex setup over
   - Obviously including code is very useful for reports, there's not really much custom stuff here but it's a good reminder of my preferred ways to include code (there's a lot of options)
 - Maths Stuff
   - I've created a few helper functions/stuff for my maths
-
+- Misc
+  - contains a todo tag I use to remind myself whats still left to do
 
   See longformnotes.pdf for a demo of each "feature"

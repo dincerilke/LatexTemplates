@@ -4,6 +4,8 @@
 
 \RequirePackage{minted}
 \RequirePackage{xcolor}
+\RequirePackage{listings}
+
 
 \renewcommand\listoflistingscaption{List of source codes}
 \definecolor{LightGray}{gray}{0.95}
@@ -17,3 +19,6 @@
 \setminted[]{bgcolor=LightGray}
 
 \usemintedstyle{borland}
+
+% longlistings are good when including long code files in appendices
+\newenvironment{longlisting}{\captionsetup{type=listing}}{}
