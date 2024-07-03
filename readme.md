@@ -1,8 +1,6 @@
 # Latex Helper Templates
 
-
 This is a collection of my Latex files that have been very helpful during uni. 
-
 
 - `longformnotes` is designed to be a long document that contains notes from units. To me, this has been my massive reference file for a unit, kinda like a mini textbook for the unit
   - Has a lot of customisation/speciality things I've added for units as I've needed them
@@ -19,7 +17,7 @@ These may work in overleaf, I have not tested it though.
 
 There are a few bespoke things that I've added to my latex setup over the years. The 'features' (more really options) are:
 
-- Index notes in Margins: `marginnotes`
+- Index notes in Margins (marginnotes)
   - Sometimes you need to print all your notes. Hyperlinks don't really work here, but adding index entries to the margins of document means it's easy to find what you want with a physical copy. 
   - Note that this is really finicky, be careful with changes
 - List of Algorithms/Pseudocode
@@ -29,7 +27,7 @@ There are a few bespoke things that I've added to my latex setup over the years.
 - Code
   - Obviously including code is very useful for reports, there's not really much custom stuff here but it's a good reminder of my preferred ways to include code (there's a lot of options)
 - Maths Stuff
-  - I've created a few helper functions/stuff for my maths
+  - Some useful maths tidbits, and including some useful packages
 - Misc
   - contains a todo tag I use to remind myself whats still left to do
 
