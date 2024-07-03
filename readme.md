@@ -7,9 +7,13 @@ This is a collection of my Latex files that have been very helpful during uni.
 - `longformnotes` is designed to be a long document that contains notes from units. To me, this has been my massive reference file for a unit, kinda like a mini textbook for the unit
   - Has a lot of customisation/speciality things I've added for units as I've needed them
 - `1pagers` is a template for when you need 1 page (or 2) of notes to take into a test. It's compacted and compressed, and can contain a hell of a lot of content. 
-  - Fairly simple, not much fancy stuff going on here. 
+  - Fairly simple, not much fancy stuff going on here, other than using a specific document class to get fancy visuals. 
 - `reports` is as it sounds, my standard report format for assignments, lab reports, etc.
   - has a bibliography and refs file, set citation style in package options for biblatex
+
+Latex needs to installed to use these documents, see installation instructions [here](https://www.latex-project.org/get/).
+
+These may work in overleaf, I have not tested it though. 
 
 ## Features/Optional Things
 
