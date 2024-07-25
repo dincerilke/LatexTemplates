@@ -1,5 +1,7 @@
 # Latex Helper Templates
 
+![image](https://github.com/user-attachments/assets/ba366d90-eda5-48b7-bdb3-45085d60839a)
+
 This is a collection of my Latex files that have been very helpful during uni. 
 
 - `longformnotes` is designed to be a long document that contains notes from units. To me, this has been my massive reference file for a unit, kinda like a mini textbook for the unit
