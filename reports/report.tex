@@ -1,6 +1,6 @@
 \documentclass[a4paper,11pt]{article}
 \usepackage[margin=0.75in]{geometry}
-\usepackage[toc,page]{appendix}
+\usepackage[title, titletoc]{appendix}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 
 \usepackage{xcolor}
@@ -117,10 +117,12 @@ def hello():
 
 
 \pagebreak
-\appendix
-
+% \appendix
+\begin{appendices}
+    
 \section{Supplementary Materials}
-
+    
+\end{appendices}
 % \begin{longlisting}
 %     \caption{Supporting Header Code for I2C Controlled LCD}
 %     \label{lst:proj:p2:lcd:h}
