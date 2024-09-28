@@ -88,6 +88,25 @@ Figure \ref{fig:coin} shows some silver.
     \label{fig:coin}
 \end{figure}
 
+
+Figure \ref{fig:morecoins} shows even more coins, and Figure \ref{fig:morecoins:another} has six coinsexactly. 
+\begin{figure}[h!]
+    \center
+    \begin{subfigure}[b]{0.4\textwidth}
+        \center
+        \includegraphics[width=0.35\textwidth]{resources/coin.png}
+        \caption{Six Coins} \label{fig:morecoins:six}
+    \end{subfigure} 
+    \hspace{0.05\textwidth} % good when the figures are larger and touch in the middle of the page not needed for this example though. 
+    \begin{subfigure}[b]{0.4\textwidth}
+        \center
+        \includegraphics[width=0.35\textwidth, angle=90]{resources/coin.png}
+        \caption{Another Six Coins} \label{fig:morecoins:another}
+        \end{subfigure}
+    \caption{Some More Coins} \label{fig:morecoins}
+\end{figure}
+
+
 \section{Section Name}
 
 \begin{table}[h!]
